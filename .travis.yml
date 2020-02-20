@@ -4,7 +4,7 @@ services:
 
 
 before_install:
-    -docker build -t oalfatyan/docker-react -f dockerfile.dev .
+    -docker build -t docker-react -f dockerfile.dev .
 
 
 script:
