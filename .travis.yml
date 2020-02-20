@@ -1,5 +1,5 @@
 sudo: required
-language: generic
+
 services:
     - docker
 
@@ -9,5 +9,4 @@ before_install:
 
 
 script:
-    
     - docker run -e CI=true oalfatyan/docker-react npm run test
