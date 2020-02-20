@@ -1,0 +1,26 @@
+version: '3'
+services:
+    web:
+        build:
+            #context is were we want our files and folders to come from
+            #dockerfile: specify the dockerfile image location
+            context: .
+            dockerfile: Dockerfile.dev
+
+        ports:
+            - "3000:3000"
+        volumes:
+            - /app/node_modules
+            - .:/app
+    tests:
+        build:
+            #context is were we want our files and folders to come from
+            #dockerfile: specify the dockerfile image location
+            context: .
+            dockerfile: Dockerfile.dev
+
+        volumes:
+            - /app/node_modules
+            - .:/app  
+        command: ["npm", "run", "test"]
+        
