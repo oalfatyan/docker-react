@@ -4,8 +4,8 @@ services:
 
 
 before_install:
-    -docker build -t $IMAGES -f dockerfile.dev .
+    -docker build -t oalfatyan/docker-react -f dockerfile.dev .
 
 
 script:
-    - docker run -e CI=true $IMAGES npm run test
+    - docker run -e CI=true oalfatyan/docker-react npm run test
