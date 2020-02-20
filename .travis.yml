@@ -6,8 +6,8 @@ services:
 before_install:
         #- docker build -t oalfatyan/docker-react -f dockerfile.dev .
 
-install:
-        - .travis/cabal_install
+#install:
+ #       - .travis/cabal_install
           ##############################################################################
 script: |
 script:
