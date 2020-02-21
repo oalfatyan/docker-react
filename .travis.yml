@@ -10,3 +10,17 @@ before_install:
 
 script:
     - docker run -e CI=true oalfatyan/docker-react npm run test
+
+deploy:
+    
+    provider: elasticbeanstalk #the cloud provider
+    region: "us-west-2" #specify the region from the link that EBS provided
+    app: docker1 #name of the app that we gave in EBS inistial configuration
+    env: "Docker1-env" #the env. is after the app specified in EBS
+    bucket_name: "elasticbeanstalk-us-east-1-480832304093" #S3 bucket, check it from S3 menu
+    bucket_path: "docker1" #similar to the app name
+    #only deploy the application when the master branch gets new code this means that the code is ready for production
+    on:
+       branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
